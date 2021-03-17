@@ -81,12 +81,13 @@ namespace Project_Atlantic
             }
         }
 
-        public void mouseClicked(Button button)
+        public void mouseClicked(Button button, bool currentPanel)
         {   
             if(this.button == button && this.clicked == false)
             {
                 button.Image = this.largeIcon;
                 button.BackColor = this.selectedColor;
+                this.saveCurrentPanel = currentPanel;
                 this.clicked = true;
             }
             else if(this.button != button)
@@ -96,10 +97,11 @@ namespace Project_Atlantic
                 notSel.Image = this.smallIcon;
                 notSel.BackColor = this.notSelectedColor;
                 this.clicked = false;
+                this.saveClickStatus = false;
             }
         }
 		
-		        public void saveOrRestoreSelection(bool currentPanel, Panel scrollBlock)
+		public void saveOrRestoreSelection(bool currentPanel, Panel scrollBlock)
         {
             if(this.clicked == true && currentPanel != this.saveCurrentPanel)
             {
