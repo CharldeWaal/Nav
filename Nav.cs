@@ -98,39 +98,5 @@ namespace Project_Atlantic
                 this.clicked = false;
             }
         }
-
-        public void saveSelection(bool firstPanel)
-        {
-            this.saveClickStatus = false;
-
-            if(this.clicked == true)
-            {
-                this.saveClickStatus = true;
-                this.saveCurrentPanel = firstPanel;
-            }
-
-            this.clicked = false;
-        }
-
-        public void restoreSelection(Panel scrollBlock, bool firstPanel)
-        {
-            if(this.saveClickStatus == true)
-            {
-                this.clicked = true;
-                this.button.BackColor = this.selectedColor;
-                this.button.Image = this.largeIcon;
-
-                if (this.saveCurrentPanel == true && firstPanel == true)
-                {
-                    scrollBlock.Visible = true;
-                    scrollBlock.Location = new Point(0, this.button.Location.Y);
-                }
-                else if(this.saveCurrentPanel == false && firstPanel == false)
-                {
-                    scrollBlock.Visible = true;
-                    scrollBlock.Location = new Point(0, this.button.Location.Y);
-                }
-            }
-        }
     }
 }
