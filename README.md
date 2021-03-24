@@ -1,2 +1,2 @@
 # Nav
-Scalable Navbar animation for Visual Studio
+Scalable Navbar animation and behaviour effect for .Net Winform applications
